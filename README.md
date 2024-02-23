@@ -1,37 +1,45 @@
-# api-quick-start
 
-Template Project for starting up CRUD API with Django Rest Framework
+# LAB - Class 34
 
-## Customization Steps
+## Project: “Vanilla” Django and Django REST Framework
 
-- DO NOT migrate yet
-- add additional dependencies as needed
-  - Re-export requirements.txt as needed
-- change `things` folder to the app name of your choice
-- Search through entire code base for `Thing`,`Things` and `things` to modify code to use your resource
-  - `project/settings.py`
-  - `project/urls.py`
-  - App's files
-    - `views.py`
-    - `urls.py`
-    - `admin.py`
-    - `serializers.py`
-    - `permissions.py`
-  - "Front" files
-    - if including a customer facing portion of the site then update/recreate:
-      - `urls_front.py`
-      - `views_front.py`
-      - template files
-      - Make sure to update project `urls.py` to add routes to the "front".
-- Update ThingModel with fields you need
-  - Make sure to update other modules that would be affected by Model customizations. E.g. serializers, tests, etc.
-- Rename `project/.env.sample` to `.env` and update as needed
-  - To generate secret key use `python3 -c "import secrets; print(secrets.token_urlsafe())"`
-- Run makemigrations and migrate commands when ready.
-- Run `python manage.py collectstatic`
-  - This repository includes static assets in repository. If you are using a Content Delivery Network then remove `staticfiles` from repository.
-- Optional: Update `api_tester.py`
+### Author: Michelangelo Ascalon
 
-## Database
+## Overview
+This project demonstrates the use of Django alongside Django REST Framework to create a robust API for managing cookie stands. It utilizes Docker for easy setup and deployment, providing a seamless development experience.
 
-**NOTE:** If you are using Postgres instead of SQLite then make sure to install `psycopg2-binary` and include in `requirements.txt`
+## Setup
+
+### Prerequisites
+- Docker and Docker Compose installed on your machine.
+- Basic understanding of Docker, Django, and Django REST Framework.
+
+### Installation
+1. Clone the repository to your local machine:
+   ```
+   git clone <repository-url>
+   ```
+2. Navigate to the project directory:
+   ```
+   cd <project-directory>
+   ```
+3. Build and start the containers with Docker Compose:
+   ```
+   docker-compose up --build
+   ```
+
+## Access and Testing
+The API is accessible at: `http://127.0.0.1:8000/api/v1/cookieStands`
+
+
+
+
+## Notes
+- Ensure Docker is running on your machine before starting the application.
+- Adjust `docker-compose.yml` according to your database preference (SQLite or PostgreSQL).
+- Static files are served using Whitenoise; ensure your static file paths are correctly set in settings for production.
+
+## Database Hosting
+- The database is hosted at ElephantSQL.
+## Superuser for Testing
+- To test as a superuser, use the username `admin` and the password `admin`.

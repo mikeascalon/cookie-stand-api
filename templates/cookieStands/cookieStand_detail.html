@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="space-y-8 p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+
+  <div class="flex">
+
+    <h5 class="flex-auto mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ cookieStand.name }}</h5>
+
+    <a href="{% url 'cookieStand_update' pk=cookieStand.pk %}">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-blue-600">
+        <!-- SVG content -->
+      </svg>
+    </a>
+
+    <a href="{% url 'cookieStand_delete' pk=cookieStand.pk %}">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-red-600">
+        <!-- SVG content -->
+      </svg>
+    </a>
+
+  </div>
+
+ 
+  <div>
+    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Location: {{ cookieStand.location }}</p>
+    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Cookie Sales: {{ cookieStand.cookie_sales }}</p>
+    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Average Cookies per Hour: {{ cookieStand.avg_cookie_per_hour }}</p>
+  </div>
+
+  
+  <a href="https://example.com/more-info/{{ cookieStand.name }}"
+    class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+    Read more
+    <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20">
+    
+    </svg>
+  </a>
+</div>
+
+{% endblock content %}
+
+
+
+

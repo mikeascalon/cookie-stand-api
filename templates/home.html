@@ -1,30 +1,31 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}All the Things - Home{% endblock %}
+{% block title %}All the Cookie Stands - Home{% endblock %}
 
 {% block content %}
   {% if user.is_authenticated %}
     <div class="space-y-8">
 
-      <h2 class="text-4xl">Hi {{ user.username }}!</h2>
-      <p>Maybe one day you'll see a glorious home page here.</p>
-      <p>But for now just notice that List and Create are in Nav bar.</p>
+      <h2 class="text-4xl text-indigo-500">Hi {{ user.username }}!</h2>
+      <p class="text-indigo-400">Maybe one day you'll see a glorious home page here.</p>
+      <p class="text-indigo-400">But for now, just notice that List and Create are in the Nav bar.</p>
     </div>
 
   {% else %}
 
     <div class="">
-      <div class="hero-content flex bg-red-300 p-4 space-x-4">
-        {#  Thanks to https://unsplash.com/photos/Kw_zQBAChws?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink#}
-        <img src="{% static 'ashim-d-silva-things.jpg' %}" class="max-w-sm rounded-lg shadow-2xl"/>
-        <div class="bg-green-300 p-4">
-          <h1 class="text-5xl font-bold">Things</h1>
-          <p class="text-2xl p-6">Almanac, binder, cucumber, drill, envelope, friend, grill, hay, jam, koala, lanyard, mousetrap, necklace, oil, printer, quill, restroom, saline, treasure, wings, xylophone, zebra, and more!</p>
-          <a href="{% url 'login' %}" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Get Started</a>
+      <div class="hero-content flex bg-red-900 p-4 space-x-4">
+        
+        <img src="{% static 'Ube-Cookies.jpg' %}" class="max-w-sm rounded-lg shadow-2xl"/>
+        <div class="bg-yellow-200 p-4">
+          <h1 class="text-5xl font-bold text-purple-600">Cookie Stand</h1>
+          <p class="text-2xl p-6 text-purple-400">Indulge in Every Bite, Sweet Memories Guaranteed!</p>
+          <a href="{% url 'login' %}" class="text-purple-600 bg-pink-500 hover:bg-pink-600 focus:ring-4 focus:ring-pink-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-pink-800">Get Started</a>
         </div>
       </div>
     </div>
 
   {% endif %}
 {% endblock %}
+
