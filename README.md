@@ -1,4 +1,3 @@
-
 # LAB - Class 34
 
 ## Project: “Vanilla” Django and Django REST Framework
@@ -31,9 +30,6 @@ This project demonstrates the use of Django alongside Django REST Framework to c
 ## Access and Testing
 The API is accessible at: `http://127.0.0.1:8000/api/v1/cookieStands`
 
-
-
-
 ## Notes
 - Ensure Docker is running on your machine before starting the application.
 - Adjust `docker-compose.yml` according to your database preference (SQLite or PostgreSQL).
@@ -41,5 +37,6 @@ The API is accessible at: `http://127.0.0.1:8000/api/v1/cookieStands`
 
 ## Database Hosting
 - The database is hosted at ElephantSQL.
+
 ## Superuser for Testing
 - To test as a superuser, use the username `admin` and the password `admin`.
