@@ -1,38 +1,48 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <div
-    class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
+  <div class="w-full max-w-lg p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
     <form class="space-y-6" method="POST">
       {% csrf_token %}
       <h5 class="text-xl font-medium text-gray-900 dark:text-white">Update Cookie Stand</h5>
       
+     
+      <!-- Description -->
       <div>
-        <label for="id_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Cookie Stand Name</label>
-        <input type="text" name="name" id="id_name"
-               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-               required value="{{ cookieStand.name }}">
+        <label for="id_description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
+        <textarea id="id_description" name="description" rows="3"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                  placeholder="A brief description of the cookie stand">{{ cookieStand.description }}</textarea>
       </div>
       
       <div>
-        <label for="id_location" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Location</label>
-        <input type="text" name="location" id="id_location"
-               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-               required value="{{ cookieStand.location }}">
+        <label for="id_hourly_sales" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Hourly Sales</label>
+        <textarea id="id_hourly_sales" name="hourly_sales" rows="4"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                  placeholder="Enter hourly sales data here"></textarea>
       </div>
       
       <div>
-        <label for="id_cookie_sales" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Cookie Sales</label>
-        <input type="number" name="cookie_sales" id="id_cookie_sales"
-               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-               required value="{{ cookieStand.cookie_sales }}">
+        <label for="id_minimum_customers_per_hour" class="block mb-2 text-sm font-medium text-gray-900 dark:text:white">Min Customers/Hour</label>
+        <input type="number" name="minimum_customers_per_hour" id="id_minimum_customers_per_hour"
+               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text:white"
+               value="{{ cookieStand.minimum_customers_per_hour }}">
       </div>
       
+      <!-- Maximum Customers Per Hour -->
       <div>
-        <label for="id_avg_cookie_per_hour" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Avg Cookies per Hour</label>
-        <input type="text" name="avg_cookie_per_hour" id="id_avg_cookie_per_hour"
-               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-               required value="{{ cookieStand.avg_cookie_per_hour }}">
+        <label for="id_maximum_customers_per_hour" class="block mb-2 text-sm font-medium text-gray-900 dark:text:white">Max Customers/Hour</label>
+        <input type="number" name="maximum_customers_per_hour" id="id_maximum_customers_per_hour"
+               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text:white"
+               value="{{ cookieStand.maximum_customers_per_hour }}">
+      </div>
+      
+      <!-- Average Cookies Per Sale -->
+      <div>
+        <label for="id_average_cookies_per_sale" class="block mb-2 text-sm font-medium text-gray-900 dark:text:white">Avg Cookies/Sale</label>
+        <input type="text" name="average_cookies_per_sale" id="id_average_cookies_per_sale"
+               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text:white"
+               value="{{ cookieStand.average_cookies_per_sale }}">
       </div>
 
       <button type="submit"

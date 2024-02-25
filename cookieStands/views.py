@@ -16,12 +16,11 @@ class CookieStandDetail(RetrieveUpdateDestroyAPIView):
 
 class CookieStandUpdateView(UpdateView):
     model = CookieStand
-    fields = ['name', 'location', 'cookie_sales', 'avg_cookie_per_hour']
+    fields = ['name', 'location', 'owner', 'description', 'hourly_sales', 'minimum_customers_per_hour', 'maximum_customers_per_hour', 'average_cookies_per_sale']
     template_name = 'cookieStands/cookieStand_update.html'
-    # Make sure to specify the correct success_url
-    success_url = '/cookieStands/'  # Adjust as necessary
+    success_url = reverse_lazy('cookieStand_list')  
 
 class CookieStandDeleteView(DeleteView):
     model = CookieStand
     # Specify the success_url to redirect to after a successful delete
-    success_url = '/cookieStands/'  # Adjust as necessary
+    success_url = '/cookieStands/'  
