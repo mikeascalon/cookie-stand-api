@@ -40,3 +40,9 @@ The API is accessible at: `http://127.0.0.1:8000/api/v1/cookieStands`
 
 ## Superuser for Testing
 - To test as a superuser, use the username `admin` and the password `admin`.
+
+### Links and Resources
+
+[back-end server url](https://cookie-stand-api-24-six.vercel.app/)
+
+[front-end application](https://cookie-stand-admin-24-bay.vercel.app/) 
